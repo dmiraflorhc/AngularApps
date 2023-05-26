@@ -189,7 +189,9 @@ export class RegulatoryInformationComponent implements OnInit, OnDestroy {
   onTxDescriptionSelected(e: any): void {
     const txDescControl = this.regulartoryFormModel.get('descriptionType');
     this.selectedTxDescDefinition = GlobalsService.getCodeDefinitionByLang(txDescControl?.value, this.lang);
-    
+    console.log(this.regulartoryFormModel.controls['descriptionType'].value)
+    GlobalsService.setSelectedValue(this.regulartoryFormModel.controls['descriptionType'].value.id)
+
     this.showDateAndRequester = this.showDateAndRequesterTxDescs.includes(
       txDescControl?.value.id
     );

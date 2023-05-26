@@ -325,4 +325,16 @@ export class MasterFileBaseComponent implements OnInit, AfterViewInit {
 
     this.processErrors();
   }
+
+  public hasTxDescToHide(txDescription): boolean {
+    console.log(txDescription);
+    const valuesToHide: string[] = ["1", "3", "5", "8", "9", "20"]; // List of values to hide
+    console.log(valuesToHide.includes(txDescription));
+    return valuesToHide.includes(txDescription);
+  }
+
+  public getTxDesc() {
+    return GlobalsService.getSelectedValue();
+  }
 }
+

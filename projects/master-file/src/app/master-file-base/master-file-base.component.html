@@ -143,7 +143,7 @@
             <h3 class="panel-title">{{'panel.title.fees'|translate}}</h3>
             </header>
             <div class="panel-body">
-            <master-file-fee (feeErrorList)="processTransFeeErrors($event)" [showErrors]="showErrors"
+            <master-file-fee *ngIf="!hasTxDescToHide(getTxDesc())" [showErrors]="showErrors"
               [helpTextSequences]="helpTextSequences" [transFeeModel]="transFeeModel"></master-file-fee>
             </div>
         </section>

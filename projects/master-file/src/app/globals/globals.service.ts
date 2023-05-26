@@ -32,7 +32,19 @@ export class GlobalsService {
   public static OP_TYPE_TEXT = '10';
   public static OP_TYPE_IDTEXTLABEL = '20';
 
+  private static selectedValue: string;
+
   constructor() {}
+
+  public static getSelectedValue(): string {
+    return this.selectedValue;
+  }
+
+  public static setSelectedValue(value): void {
+    console.log('selectedValue');
+    console.log(value);
+    this.selectedValue = value;
+  }
 
   static isFrench(lang: string): boolean {
     return lang === GlobalsService.FRENCH;
